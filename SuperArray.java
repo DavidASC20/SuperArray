@@ -58,4 +58,12 @@ public class SuperArray {
             temp += data[i] + ", ";
         }return temp;
     }
+
+    public boolean contains(String s){
+        for(int i = 0; i < data.length; i++){
+            if(data[i].equals(s)){
+                return true;
+            }
+        }return false;
+    }
 }
