@@ -38,4 +38,16 @@ public class SuperArray {
         }data = bigger;
         size++;
     }
+
+    public boolean isEmpty(){
+        if(data[0].equals("")){
+            return true;
+        }return false;
+    }
+
+    public void clear(){
+        String[] temp = new String[10];
+        data = temp;
+        size = 0;
+    }
 }
