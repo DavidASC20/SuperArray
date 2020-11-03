@@ -40,14 +40,19 @@ public class SuperArray {
     }
 
     public boolean isEmpty(){
-        if(data[0].equals("")){
-            return true;
-        }return false;
+        return (size == 0);
     }
 
     public void clear(){
         String[] temp = new String[10];
         data = temp;
         size = 0;
+    }
+
+    public String toString(){
+        String temp = "[";
+        for(int i = 0; i < data.length; i++){
+
+        }
     }
 }
