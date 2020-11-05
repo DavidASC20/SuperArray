@@ -31,13 +31,13 @@ public class SuperArray {
         return temp;
     }
 
-    private void resize(){
-        String[] bigger = new String[data.length * 2];
-        for(int i = 0; i < data.length; i++){
-            bigger[i] = data[i];
-        }data = bigger;
-        size++;
-    }
+    private void resize() {
+        String[] bigdata = new String[size*2];
+        for (int i=0; i<data.length; i++) {
+          bigdata[i] = data[i];
+        }
+        data = bigdata;
+      }
 
     public boolean isEmpty(){
         return (size == 0);
@@ -53,9 +53,9 @@ public class SuperArray {
         String temp = "[";
         for(int i = 0; i < size; i++){
             if( i == size - 1){
-                temp += data[i]+ "]";
+                temp += String.valueOf(data[i]) + "]";
             }
-            temp += data[i] + ", ";
+            temp += String.valueOf(data[i]) + ", ";
         }return temp;
     }
 
@@ -73,19 +73,23 @@ public class SuperArray {
     }
 
 
-    public void add(int index, Sting element){
-        String temp = "";
-        String temp2 = "";
-        for(int i = index; i < size; i++){
-            if(i == index){
-                temp = data[i];
-                data[i] = element;
-            }else{
-                temp2 = data[i];
-                data[i] = temp;
-                temp = temp2;
-            }
+    public void add(int index, String element) {
+        if (size == data.length) resize();
+        for (int i=size-1; i>=index; i--) {
+          String store = data[i];
+          data[i+1] = store;
         }
+        data[index] = element;
+        size++;
+    }
+
+    public String remove(int index) {
+        String value = data[index];
+        for (int i=index; i<size; i++) {
+          data[i] = data[i+1];
+        }
+        size--;
+        return value;
     }
 
     public int indexOf(String s){
