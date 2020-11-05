@@ -66,4 +66,25 @@ public class SuperArray {
             }
         }return false;
     }
+
+    public SuperArray(int initialCapacity){
+        data = new String[initialCapacity];
+        size = 0;
+    }
+
+
+    public void add(int index, Sting element){
+        String temp = "";
+        String temp2 = "";
+        for(int i = index; i < data.length; i++){
+            if(i == index){
+                temp = data[i];
+                data[i] = element;
+            }else{
+                temp2 = data[i];
+                data[i] = temp;
+                temp = temp2;
+            }
+        }
+    }
 }
