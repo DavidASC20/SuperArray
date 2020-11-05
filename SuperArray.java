@@ -76,7 +76,7 @@ public class SuperArray {
     public void add(int index, Sting element){
         String temp = "";
         String temp2 = "";
-        for(int i = index; i < data.length; i++){
+        for(int i = index; i < size; i++){
             if(i == index){
                 temp = data[i];
                 data[i] = element;
@@ -87,4 +87,24 @@ public class SuperArray {
             }
         }
     }
+
+    public int indexOf(String s){
+        int bruh = -1;
+        for(int i = 0; i < size; i++){
+            if(data[i].equals(s)){
+                bruh = i;
+                break;
+            }
+        }return bruh;
+    }
+
+    public String[] toArray(){
+        String[] temp = new String[size];
+        for(int i = 0; i < size; i++){
+            temp[i] = data[i];
+        }return temp;
+    }
+
+
+
 }
