@@ -54,8 +54,9 @@ public class SuperArray {
         for(int i = 0; i < size; i++){
             if( i == size - 1){
                 temp += String.valueOf(data[i]) + "]";
-            }
+            }else{
             temp += String.valueOf(data[i]) + ", ";
+            }
         }return temp;
     }
 
@@ -109,6 +110,14 @@ public class SuperArray {
         }return temp;
     }
 
+    public int lastIndexOf(String Value){
+            for(int i = size; i >= 0; i--){
+                if(data[i].equals(Value)){
+                    return get(i);
+                }
+            }return -1;
+        }
+    }
 
 
 }
