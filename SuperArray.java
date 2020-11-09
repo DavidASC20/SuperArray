@@ -113,7 +113,7 @@ public class SuperArray {
     public int lastIndexOf(String Value){
         for(int i = size; i >= 0; i--){
             if(data[i].equals(Value)){
-                    return get(i);
+                    return i;
             }
         }return -1;
     }
@@ -127,7 +127,7 @@ public class SuperArray {
             }
         }
         for(int i = 0; i < other.size; i++){
-            if(other.data[i] != data){
+            if(other.data[i] != data[i]){
                 case2 = false;
             }
         }return (case1 == true && case2 == true);
