@@ -111,14 +111,13 @@ public class SuperArray {
     }
 
     public int lastIndexOf(String Value){
-        if(contains(Value)){
-        for(int i = size; i >= 0; i--){
-            if(data[i].equals(Value) && data[i] != null){
+        for(int i = size - 1; i >= 0; i--){
+            if(data[i].equals(Value)){
                     return i;
             }
-        }
-        }else{return -1;}
+        }return -1;
     }
+
     
     public boolean equals(SuperArray other){
         boolean case1 = true;
