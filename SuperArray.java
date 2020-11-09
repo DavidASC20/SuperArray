@@ -53,15 +53,15 @@ public class SuperArray {
         String temp = "[";
         for(int i = 0; i < size; i++){
             if( i == size - 1){
-                temp += String.valueOf(data[i]) + "]";
+                temp += String.valueOf(data[i]);
             }else{
             temp += String.valueOf(data[i]) + ", ";
             }
-        }return temp;
+        }return temp +"]";
     }
 
     public boolean contains(String s){
-        for(int i = 0; i < data.length; i++){
+        for(int i = 0; i < size; i++){
             if(data[i].equals(s)){
                 return true;
             }
@@ -111,11 +111,13 @@ public class SuperArray {
     }
 
     public int lastIndexOf(String Value){
+        if(contains(Value)){
         for(int i = size; i >= 0; i--){
-            if(data[i].equals(Value)){
+            if(data[i].equals(Value) && data[i] != null){
                     return i;
             }
-        }return -1;
+        }
+        }else{return -1;}
     }
     
     public boolean equals(SuperArray other){

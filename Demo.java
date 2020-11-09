@@ -8,12 +8,13 @@ public class Demo{
      }
 
      public static SuperArray findOverlap(SuperArray a, SuperArray b){
-         SuperArray temp = new SuperArray();
-         for(int i = 0; i < a.size(); i++){
-            if(b.contains(a.get(i))&& temp.indexOf(a.get(i)) == -1){
-                temp.add(a.get(i));
-            }
-         }return temp;
+      SuperArray c = new SuperArray();
+      for (int i=0; i<a.size(); i++) {
+        String str = a.get(i);
+        if (b.contains(str)) c.add(str);
+      }
+      removeDuplicates(c);
+      return c;
      }
 
      public static SuperArray zip(SuperArray a, SuperArray b) {
