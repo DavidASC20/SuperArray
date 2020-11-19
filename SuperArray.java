@@ -110,7 +110,7 @@ public class SuperArray {
             " cannot be negative or greater than the size of the array");
         }
         String value = data[index];
-        for (int i=index; i<size; i++) {
+        for (int i=index; i<size - 1; i++) {
           data[i] = data[i+1];
         }
         size--;
